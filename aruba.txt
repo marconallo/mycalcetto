@@ -1,0 +1,21 @@
+SERVER MYSQL
+
+http://mysql.aruba.it
+
+Nome Utente: Sql30280
+
+Password: nHQuAF:U 
+
+---------------------------
+
+SERVER FTP
+
+ftp.antoniani.it
+
+
+Login: 1103448@aruba.it
+
+Password: 96c0d548cc
+
+
+----------------------------
