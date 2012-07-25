@@ -51,7 +51,7 @@ function getUserByIdAjax($userid){
 
 function newUser($username, $password, $email, $name, $surname, $remoteAddress){
 	global $logger;
-	$query="INSERT INTO TZ_MEMBERS(usr,pass,name,surname,email,regIP,dt,level) VALUES('$username','".md5($password)."','$name','$surname','$email','$remoteAddress',NOW(),0);";
+	$query="INSERT INTO TZ_MEMBERS(usr,pass,name,surname,email,regIP,dt,level) VALUES('$username','".md5($password)."','$name','$surname','$email','$remoteAddress',NOW(),1);";
 	if (mysql_query($query)) {
 		$message = '
 				<html>
