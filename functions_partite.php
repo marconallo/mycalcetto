@@ -18,6 +18,11 @@ $logger = new Log($logDir, $logFileName, $headerTitle, $logMode, $counterFile);
 
 function accettaPartita($user, $id_partita) {
 
+    $numero_giocatori_query = "SELECT NUM_GIOCATORI AS NUMERO FROM PARTITA WHERE ID = $id_partita";
+    $res_num_giocatori = mysql_query($numero_giocatori_query);
+    $riga_num_giocatori = mysql_fetch_array($res_num_giocatori);
+    $numero_giocatori = $riga_num_giocatori['NUMERO'];
+    
     $conto2 = "SELECT USER_ID FROM PARTECIPAZIONE WHERE USER_ID = '$user' AND ID_PARTITA = $id_partita AND PARTECIPA = 1";
     $res2 = mysql_query($conto2);
     $riga2 = mysql_fetch_array($res2);
@@ -29,7 +34,7 @@ function accettaPartita($user, $id_partita) {
         $res = mysql_query($conto);
         $riga = mysql_fetch_array($res);
         if ($riga) {
-            if ($riga['NUMERO'] < 10) { /* C'e' ancora posto */
+            if ($riga['NUMERO'] < $numero_giocatori) { /* C'e' ancora posto */
 
                 $query = "UPDATE PARTECIPAZIONE SET PARTECIPA = 1 WHERE USER_ID = '$user' AND ID_PARTITA = $id_partita";
                 $result = mysql_query($query);
@@ -41,7 +46,7 @@ function accettaPartita($user, $id_partita) {
                 $res = mysql_query($conto);
 		$riga = mysql_fetch_array($res);
                 if ($riga) {
-                    if ($riga['NUMERO'] == 10) { /* Siamo in 10! */
+                    if ($riga['NUMERO'] == $numero_giocatori) { /* Iscritti tutti! */
                         chiudiPartita($id_partita);
                     }
                 } else { /* Errore query */
@@ -49,7 +54,7 @@ function accettaPartita($user, $id_partita) {
                     echo "</br><p>Torna alla <a href='visualizzaPartite.php'>pagina precedente</a>.</p>";
                 }
             } else { /* Non c'e' piu' posto */
-                echo "<div class='warning'>Mi dispiace, non ci sono pi&ugrave; posti disponibili!</div>";
+                echo "<div class='warning'>Mi dispiace, non ci sono pi&ugrave; posti disponibili! Max: $numero_giocatori.</div>";
                 echo "</br><p>Torna alla <a href='visualizzaPartite.php'>pagina precedente</a>.</p>";
             }
         } else { /* Errore query */
@@ -797,10 +802,10 @@ function visualizzaPartitePagelle($user) {
     }
 }
 
-function nuovaPartita($user, $ora_inizio, $campo, $note, $invitaTutti) {
+function nuovaPartita($user, $ora_inizio, $campo, $note, $invitaTutti, $numGiocatori) {
 
     $query1 = '';
-    $query1 = "INSERT INTO PARTITA (ID_CAMPO, ORA_INIZIO, ID_ORGANIZZATORE, NOTE) VALUES ($campo, '$ora_inizio','$user','$note')";
+    $query1 = "INSERT INTO PARTITA (ID_CAMPO, ORA_INIZIO, ID_ORGANIZZATORE, NOTE, NUM_GIOCATORI) VALUES ($campo, '$ora_inizio','$user','$note', '$numGiocatori')";
     if (mysql_query($query1)) {
         echo "<div class='success'>La partita &egrave; stata creata!";
 

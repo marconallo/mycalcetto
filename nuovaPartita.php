@@ -185,8 +185,16 @@ if($_SESSION['msg'])
 					<label for="note">Note</label><br/>
 					<textarea name="note" id="note"></textarea>
 				</p>
+            	<p class="giocatori">
+					<label for="giocatori">Numero giocatori</label><br/>
+					<select name="giocatori" id="giocatori">
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                    </select>
+				</p>
 				<p class="invita">
-					<input type="checkbox" value="1" checked="checked" disabled="disabled" />
+					<input type="checkbox" value="1" checked="checked" />
 					<label for="invitaTutti">Invita tutti</label>
 				</p>
 				<p>

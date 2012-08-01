@@ -63,9 +63,10 @@ if($_SESSION['id']){
 				$campo = mysql_real_escape_string(strip_tags($_POST['idCampo']));
 				$note = mysql_real_escape_string(strip_tags($_POST['note']));
 				$invitaTutti = mysql_real_escape_string(strip_tags($_POST['invitaTutti']));
+                $numGiocatori = mysql_real_escape_string(strip_tags($_POST['giocatori']));
 				echo '<div class="container" style="width: 500px;">';
 				echo '<h3>Nuova Partita</h3>';
-				nuovaPartita($user, $ora_inizio, $campo, $note, $invitaTutti);
+				nuovaPartita($user, $ora_inizio, $campo, $note, $invitaTutti,$numGiocatori);
 				echo '</div>';
 				exit;
 					
