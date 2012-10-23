@@ -47,6 +47,11 @@ if($_SESSION['msg']){
 		});
 	</script>';
 }
+
+if (isset($_SESSION['level']) && $_SESSION['level']==9) {
+    $isAdmin=true;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -157,7 +162,7 @@ if($_SESSION['msg']){
         </div>
 		<div class="container">
 			<h3></h3>
-			<?php visualizzaUtente($_SESSION['id'], false)?>
+			<?php visualizzaUtente($_SESSION['id'], $isAdmin)?>
 		</div>
         
 <?php } else { ?>

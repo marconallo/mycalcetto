@@ -228,7 +228,7 @@ function visualizzaUtente($idUser, $isAdmin){
 								<label for="username">Cellulare</label>
 							</p>
 							<p class="accetta">
-								<input type="checkbox" value="1" name="accetta" '.$acceptCheck.' />
+								<input type="checkbox" value="1" name="accetta" '.$acceptCheck.'" '.$disabled.' />
 								<label for="accetta">Accetta Sempre</label>
 							</p>
 				';
