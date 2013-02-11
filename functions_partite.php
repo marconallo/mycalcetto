@@ -689,8 +689,12 @@ function visualizzaPartiteAdmin($user) {
                                 <img class='cancella_img' src='img/Cancel_24x24.png' alt='Annulla' title='Annulla la partita' onclick='cancellaPartita($partita);'>
                                 </form></td>";
                 echo "</table></tr>";
-            } else {
+            } elseif ($stato == 'C')  {
                 echo "CHIUSA!";
+            } elseif ($stato == 'A')  {
+                echo "ANNULLATA!";
+            } else {
+                echo "";
             }
             echo "</td>";
 

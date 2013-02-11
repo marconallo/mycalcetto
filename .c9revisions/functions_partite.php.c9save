@@ -22,3 +22,13 @@
 {"ts":1360601038898,"patch":[[{"diffs":[[0,"_partita\";\r\n    "],[1,"//"],[0,"$result2 = mysql"]],"start1":8342,"start2":8342,"length1":32,"length2":34}]],"length":49643,"saved":false}
 {"ts":1360601047847,"patch":[[{"diffs":[[0,"ITA SET "],[-1," "],[0,"STATO = "]],"start1":8190,"start2":8190,"length1":17,"length2":16}]],"length":49642,"saved":false}
 {"ts":1360601051799,"patch":[[{"diffs":[[0," STATO ="],[-1," "],[0," 'A' WHE"]],"start1":8197,"start2":8197,"length1":17,"length2":16}]],"length":49641,"saved":false}
+{"ts":1360601735708,"patch":[[{"diffs":[[0,"          } else"],[1,"if ($stato != 'C') "],[0," {\r\n            "]],"start1":31608,"start2":31608,"length1":32,"length2":51}]],"length":49660,"saved":false}
+{"ts":1360601739619,"patch":[[{"diffs":[[0,"eif ($stato "],[-1,"!"],[1,"="],[0,"= 'C')  {\r\n "]],"start1":31623,"start2":31623,"length1":25,"length2":25}]],"length":49660,"saved":false}
+{"ts":1360601746260,"patch":[[{"diffs":[[0,"\"CHIUSA!\";\r\n"],[1,"            } elseif ($stato == 'C')  {\r\n                echo \"CHIUSA!\";\r\n"],[0,"            "]],"start1":31668,"start2":31668,"length1":24,"length2":98}]],"length":49734,"saved":false}
+{"ts":1360601749473,"patch":[[{"diffs":[[0,"eif ($stato == '"],[-1,"C"],[1,"A"],[0,"')  {\r\n         "]],"start1":31697,"start2":31697,"length1":33,"length2":33}]],"length":49734,"saved":false}
+{"ts":1360601751175,"patch":[[{"diffs":[[0,"          echo \""],[-1,"CHIUS"],[1,"ANNULL"],[0,"A!\";\r\n          "]],"start1":31727,"start2":31727,"length1":37,"length2":38}]],"length":49735,"saved":false}
+{"ts":1360601752891,"patch":[[{"diffs":[[0,"\"ANNULLA"],[1,"TA"],[0,"!\";\r\n   "]],"start1":31742,"start2":31742,"length1":16,"length2":18}]],"length":49737,"saved":false}
+{"ts":1360601755270,"patch":[[{"diffs":[[0,";\r\n            }"],[1," else"],[0,"\r\n            ec"]],"start1":31754,"start2":31754,"length1":32,"length2":37}]],"length":49742,"saved":false}
+{"ts":1360601757297,"patch":[[{"diffs":[[0,"  } else"],[1," {}"],[0,"\r\n      "]],"start1":31767,"start2":31767,"length1":16,"length2":19}]],"length":49745,"saved":false}
+{"ts":1360601758578,"patch":[[{"diffs":[[0,"} else {"],[1,"\r\n                \r\n            "],[0,"}\r\n     "]],"start1":31769,"start2":31769,"length1":16,"length2":48}]],"length":49777,"saved":false}
+{"ts":1360601825715,"patch":[[{"diffs":[[0,"            "],[1,"echo \"\";"],[0,"\r\n          "]],"start1":31783,"start2":31783,"length1":24,"length2":32}]],"length":49785,"saved":false}
