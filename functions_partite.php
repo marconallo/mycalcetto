@@ -169,11 +169,12 @@ function cancellaPartita($user, $id_partita) {
         }
     }
 
-    $query = "DELETE FROM PARTITA WHERE ID = $id_partita";
+    //$query = "DELETE FROM PARTITA WHERE ID = $id_partita";
+    $query = "UPDATE PARTITA SET STATO = 'A' WHERE ID = $id_partita";
     $result = mysql_query($query);
 
-    $query2 = "DELETE FROM PARTECIPAZIONE WHERE ID_PARTITA = $id_partita";
-    $result2 = mysql_query($query2);
+    //$query2 = "DELETE FROM PARTECIPAZIONE WHERE ID_PARTITA = $id_partita";
+    //$result2 = mysql_query($query2);
 
     echo "<div class='info'>La partita &egrave; stata annullata. &Egrave; stata inviata una e-mail a chi era iscritto ($c persone).<br /></div>";
     echo "</br><p>Torna alla <a href='visualizzaPartite.php'>pagina precedente</a>.</p>";
