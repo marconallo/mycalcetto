@@ -666,7 +666,12 @@ function visualizzaPartiteAdmin($user) {
             //echo "<td>$stato</td>";
 
             echo "<td>";
-            if ($stato != 'C') {
+            
+            if ($stato == 'C')  {
+                echo "CHIUSA!";
+            } elseif ($stato == 'A')  {
+                echo "ANNULLATA!";
+            } else {
                 echo "<table><tr>";
                 echo "<td style='padding: 0; margin: 0;'><form id='invita_form_$partita' method='post' action='partite.php'>
                                 <input type='hidden' name='id_partita' value='$partita' />
@@ -689,12 +694,6 @@ function visualizzaPartiteAdmin($user) {
                                 <img class='cancella_img' src='img/Cancel_24x24.png' alt='Annulla' title='Annulla la partita' onclick='cancellaPartita($partita);'>
                                 </form></td>";
                 echo "</table></tr>";
-            } elseif ($stato == 'C')  {
-                echo "CHIUSA!";
-            } elseif ($stato == 'A')  {
-                echo "ANNULLATA!";
-            } else {
-                echo "";
             }
             echo "</td>";
 
